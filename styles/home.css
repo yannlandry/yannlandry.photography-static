@@ -1,0 +1,23 @@
+header {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.slideshow {
+    height: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+.slideshow::-webkit-scrollbar {
+    display: none;
+}
+.slideshow > div {
+    height: calc(100% - 100px);
+    line-height: 0;
+    font-size: 0;
+}
+.slideshow > div > img {
+    display: inline-block;
+    height: 100%;
+}

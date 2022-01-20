@@ -1,0 +1,5 @@
+# Do not host images on GitHub
+/images/
+
+# Mac shit
+**/.DS_Store

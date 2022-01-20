@@ -1,0 +1,196 @@
+html, body {
+    height: 100%;
+}
+body {
+    line-height: 1.4em;
+    font-family: merriweather, serif;
+    font-size: 1.1em;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.2em;
+    margin-top: 1em;
+    font-family: proxima-nova, sans-serif;
+    font-weight: 600;
+}
+h1 { font-weight: 800; font-size: 3em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.75em; }
+h4 { font-size: 1.5em; }
+h5 { font-size: 1.25em; }
+h6 { font-size: 1em; }
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+    color: inherit;
+}
+
+/* General text blocks */
+p, ul, ol, pre, blockquote {
+    margin-top: 1em;
+}
+ul {
+    padding-left: 2em;
+    list-style-type: disc;
+}
+ol {
+    padding-left: 2em;
+    list-style-type: decimal;
+}
+pre {
+    line-height: 1em;
+    padding: 1.2em 1em;
+    white-space: nowrap;
+    overflow: scroll;
+    background-color: #F5F5F5;
+    border: 1px dashed #DDD;
+    font-family: monospace;
+}
+code {
+    background-color: #F5F5F5;
+    font-family: monospace;
+    font-size: 1.1em;
+}
+blockquote {
+    width: 80%;
+    overflow: hidden;
+}
+blockquote:before {
+    display: block;
+    float: left;
+    width: 80px;
+    padding-top: 0.6em;
+    font-size: 6em;
+    font-weight: bold;
+    color: #CCC;
+    content: "“";
+}
+blockquote p {
+    line-height: 1em;
+    margin: 0;
+    margin-left: 80px;
+    padding: 0.5em;
+    font-family: proxima-nova, sans-serif;
+    font-size: 2em;
+}
+@media (max-width: 700px) {
+    blockquote {
+        width: auto;
+    }
+}
+
+/* Other */
+a {
+    color: blue;
+    text-decoration: none;
+}
+.smaller {
+    font-size: 0.8em;
+}
+
+/* Header */
+header {
+    width: 100%;
+    height: 100px;
+}
+header a {
+    display: inline-block;
+    height: 100px;
+    line-height: 100px;
+    font-family: proxima-nova, sans-serif;
+    color: #333;
+    transition: color 0.5s ease;
+}
+header:hover a {
+    color: #777;
+}
+header:hover a:hover {
+    color: #333;
+}
+header > a {
+    padding: 0 30px;
+    font-size: 30px;
+}
+header > a > strong {
+    font-weight: 600;
+}
+nav {
+    float: right;
+    padding-right: 15px;
+}
+nav > a {
+    padding: 0 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+@media (max-width: 700px) {
+    header {
+        text-align: center;
+    }
+    header > a {
+        height: 40px;
+        line-height: 40px;
+        padding: 15px 0 0;
+    }
+    nav {
+        float: none;
+        padding: 0;
+    }
+    nav > a {
+        height: 40px;
+        line-height: 40px;
+    }
+}
+
+/* Blog/pages */
+article {
+    max-width: 900px;
+    margin: auto;
+    padding: 0 30px;
+}
+p.summary {
+    font-family: proxima-nova, sans-serif;
+    font-size: 1.3em;
+    color: #999
+    ;
+}
+a.keyword {
+    display: inline-block;
+    line-height: 1em;
+    padding: 0.5em;
+    background-color: #BBB;
+    border-radius: 1em;
+    font-family: proxima-nova, sans-serif;
+    font-size: 0.9em;
+    color: #FFF;
+}
+.active-keyword a.keyword {
+    background-color: #DDD;
+}
+.active-keyword a.keyword.active {
+    background-color: #BBB;
+}
+a.permalink {
+    display: inline-block;
+    opacity: 0;
+    line-height: 1em;
+    margin-left: 0.4em;
+    font-family: dripicons-v2;
+    font-size: 0.5em; /* TODO: screws margins? */
+    color: #CCC;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+a.permalink:after {
+    content: "\e00e";
+}
+a.permalink:hover {
+    color: #666;
+}
+*:hover > a.permalink {
+    opacity: 1;
+}
+article img {
+    max-width: 100%;
+}
+div#disqus_thread {
+    margin-top: 50px;
+}
