@@ -2,9 +2,79 @@ html, body {
     height: 100%;
 }
 body {
-    line-height: 1.4em;
+    line-height: 1.8em;
     font-family: merriweather, serif;
     font-size: 1.1em;
+}
+
+/* Links */
+a {
+    color: #005282;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+a:hover {
+    color: #00395B;
+}
+
+/* Header */
+header {
+    width: 100%;
+    height: 100px;
+}
+header a {
+    display: block;
+    height: 100px;
+    line-height: 100px;
+    font-family: proxima-nova, sans-serif;
+    color: #333;
+    transition: color 0.5s ease;
+}
+header:hover a {
+    color: #777;
+}
+header a:hover {
+    color: #333;
+}
+header > a {
+    float: left;
+    padding: 0 30px;
+    font-size: 30px;
+}
+header > a > strong {
+    font-weight: 600;
+}
+nav {
+    float: right;
+    padding-right: 15px;
+}
+nav > a {
+    float: left;
+    padding: 0 15px;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: lowercase;
+}
+@media (max-width: 700px) {
+    header {
+        text-align: center;
+    }
+    header > a {
+        float: none;
+        height: 50px;
+        line-height: 50px;
+        padding: 15px 0 0;
+    }
+    nav {
+        float: none;
+        width: fit-content;
+        margin: auto;
+        padding: 0;
+    }
+    nav > a {
+        height: 30px;
+        line-height: 30px;
+    }
 }
 
 /* Headings */
@@ -28,31 +98,34 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 p, ul, ol, pre, blockquote {
     margin-top: 1em;
 }
-ul {
-    padding-left: 2em;
+ul > li {
+    margin-left: 2em;
     list-style-type: disc;
 }
-ol {
-    padding-left: 2em;
+ol > li {
+    margin-left: 2em;
     list-style-type: decimal;
 }
 pre {
-    line-height: 1em;
-    padding: 1.2em 1em;
-    white-space: nowrap;
-    overflow: scroll;
-    background-color: #F5F5F5;
-    border: 1px dashed #DDD;
-    font-family: monospace;
+    white-space: pre;
 }
 code {
     background-color: #F5F5F5;
     font-family: monospace;
     font-size: 1.1em;
 }
+pre > code {
+    display: block;
+    line-height: 1.2em;
+    padding: 1.2em 1em;
+    white-space: pre;
+    overflow: scroll;
+    border: 1px dashed #DDD;
+}
 blockquote {
-    width: 80%;
     overflow: hidden;
+    margin-top: 1.9em;
+    margin-bottom: 2em;
 }
 blockquote:before {
     display: block;
@@ -65,6 +138,7 @@ blockquote:before {
     content: "“";
 }
 blockquote p {
+    width: 80%;
     line-height: 1em;
     margin: 0;
     margin-left: 80px;
@@ -72,86 +146,78 @@ blockquote p {
     font-family: proxima-nova, sans-serif;
     font-size: 2em;
 }
+strong {
+    font-weight: bold;
+}
+em {
+    font-style: italic;
+}
 @media (max-width: 700px) {
-    blockquote {
+    blockquote p {
         width: auto;
     }
 }
-
-/* Other */
-a {
-    color: blue;
-    text-decoration: none;
-}
-.smaller {
-    font-size: 0.8em;
-}
-
-/* Header */
-header {
-    width: 100%;
-    height: 100px;
-}
-header a {
-    display: inline-block;
-    height: 100px;
-    line-height: 100px;
-    font-family: proxima-nova, sans-serif;
-    color: #333;
-    transition: color 0.5s ease;
-}
-header:hover a {
-    color: #777;
-}
-header:hover a:hover {
-    color: #333;
-}
-header > a {
-    padding: 0 30px;
-    font-size: 30px;
-}
-header > a > strong {
-    font-weight: 600;
-}
-nav {
-    float: right;
-    padding-right: 15px;
-}
-nav > a {
-    padding: 0 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-}
-@media (max-width: 700px) {
-    header {
-        text-align: center;
-    }
-    header > a {
-        height: 40px;
-        line-height: 40px;
-        padding: 15px 0 0;
-    }
-    nav {
+@media (max-width: 450px) {
+    blockquote:before {
         float: none;
-        padding: 0;
     }
-    nav > a {
-        height: 40px;
-        line-height: 40px;
+    blockquote p {
+        margin-left: 0;
     }
 }
 
-/* Blog/pages */
-article {
-    max-width: 900px;
-    margin: auto;
-    padding: 0 30px;
+/* Blog and pages */
+article > h1, article > h2, article > h3, article > h4, article > h5, article > h6, article > p, article > blockquote,
+article > ul, article > ol, article > pre, article > section, div.normal {
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+article img {
+    max-width: 100%;
+}
+article p.wide {
+    max-width: 1200px;
+    margin-top: 2em;
+}
+article p.full {
+    max-width: 100%;
+    margin-top: 2.5em;
+    padding-left: 0;
+    padding-right: 0;
+}
+article.preview {
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+}
+article.preview h2 {
+    margin-top: 0.3em;
+}
+p.summary, p.caption, p.published {
+    font-family: proxima-nova, sans-serif;
+    color: #999
 }
 p.summary {
-    font-family: proxima-nova, sans-serif;
     font-size: 1.3em;
-    color: #999
-    ;
+}
+p.caption {
+    line-height: 1.4em;
+    margin-top: 0;
+    text-align: center;
+    font-size: 0.8em;
+    font-style: italic;
+}
+p.published {
+    overflow: hidden;
+}
+p.published span.keywords {
+    float: right;
+}
+:not(article.preview) p.published {
+    margin-top: 2em;
 }
 a.keyword {
     display: inline-block;
@@ -161,6 +227,9 @@ a.keyword {
     border-radius: 1em;
     font-family: proxima-nova, sans-serif;
     font-size: 0.9em;
+    color: #FFF;
+}
+a.keyword:hover {
     color: #FFF;
 }
 .active-keyword a.keyword {
@@ -188,9 +257,41 @@ a.permalink:hover {
 *:hover > a.permalink {
     opacity: 1;
 }
-article img {
-    max-width: 100%;
+
+/* Social links */
+.social {
+    line-height: 1em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
+    text-align: center;
+    font-size: 2em;
 }
-div#disqus_thread {
-    margin-top: 50px;
+.social a {
+    display: inline-block;
+    line-height: 1em;
+    font-size: 2em;
+    font-family: socialico;
+    color: #000;
+}
+.social a:hover {
+    color: #000;
+}
+.social a.plus {
+    font-family: socialico-plus;
+}
+.social a.facebook { color: rgb(0, 106, 255); }
+.social a.facebook:hover { color: rgb(0, 74, 179); }
+.social a.twitter { color: rgb(29, 161, 242); }
+.social a.twitter:hover { color: rgb(20, 113, 169); }
+.social a.pinterest { color: rgb(230, 0, 35); }
+.social a.pinterest:hover { color: rgb(161, 0, 25); }
+.social a.email { color: rgb(100, 100, 100); }
+.social a.email:hover { color: rgb(70, 70, 70); }
+
+/* Other */
+.smaller {
+    font-size: 0.8em;
+}
+time {
+    cursor: help;
 }

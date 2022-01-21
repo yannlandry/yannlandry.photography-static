@@ -1,23 +1,77 @@
 header {
     position: absolute;
+    z-index: 100;
+    top: 0;
     left: 0;
+}
+header a {
+    color: #FFF;
+    transition: text-shadow 0.5s ease;
+}
+header:hover a {
+    color: #FFF;
+    text-shadow: 1px 1px 6px rgba(50, 50, 50, 0.35);
+}
+header a:hover {
+    color: #FFF;
+    text-shadow: 0px 0px 10px rgba(200, 200, 200, 0.6);
+}
+
+#slideshow {
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+#slideshow > div {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 3s ease;
+}
+#slideshow > div > span {
+    display: block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    line-height: 13px;
+    text-align: right;
+    font-family: proxima-nova, sans-serif;
+    font-size: 13px;
+    font-style: italic;
+    color: #FFF;
+    opacity: 0.75;
+}
+@media (max-width: 700px) {
+    #slideshow > div > span {
+        right: 0;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+footer .social {
+    position: absolute;
+    z-index: 100;
     bottom: 0;
+    left: 0;
+    width: 100%;
+    padding-bottom: 20px;
+    font-size: 1.75em;
 }
-.slideshow {
-    height: 100%;
-    overflow-x: scroll;
-    white-space: nowrap;
-    scrollbar-width: none;
+footer .social a {
+    color: #FFF;
+    transition: text-shadow 0.5s ease;
 }
-.slideshow::-webkit-scrollbar {
-    display: none;
+footer .social:hover a {
+    text-shadow: 1px 1px 6px rgba(50, 50, 50, 0.35);
 }
-.slideshow > div {
-    height: calc(100% - 100px);
-    line-height: 0;
-    font-size: 0;
-}
-.slideshow > div > img {
-    display: inline-block;
-    height: 100%;
+footer .social a:hover {
+    color: #FFF;
+    text-shadow: 0px 0px 10px rgba(200, 200, 200, 0.6);
 }
