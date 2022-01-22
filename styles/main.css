@@ -90,7 +90,7 @@ h3 { font-size: 1.75em; }
 h4 { font-size: 1.5em; }
 h5 { font-size: 1.25em; }
 h6 { font-size: 1em; }
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover {
     color: inherit;
 }
 
@@ -179,11 +179,17 @@ article > ul, article > ol, article > pre, article > section, div.normal {
 article img {
     max-width: 100%;
 }
-article p.wide {
-    max-width: 1200px;
+article .narrow {
+    max-width: 360px;
+}
+article .medium {
+    max-width: 660px;
+}
+article .wide {
+    max-width: 1260px;
     margin-top: 2em;
 }
-article p.full {
+article .full {
     max-width: 100%;
     margin-top: 2.5em;
     padding-left: 0;
@@ -291,6 +297,12 @@ a.permalink:hover {
 /* Other */
 .smaller {
     font-size: 0.8em;
+}
+.center {
+    text-align: center;
+}
+.rounded-img img {
+    border-radius: 50%;
 }
 time {
     cursor: help;
