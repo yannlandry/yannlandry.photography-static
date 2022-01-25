@@ -7,7 +7,9 @@
     var preload = function(i) {
         if (slides.item(i).style["background-image"] == "" && "background" in slides.item(i).dataset) {
             slides.item(i).style["background-image"] = "url(\"" + slides.item(i).dataset["background"] + "\")";
+            return true;
         }
+        return false;
     }
 
     var current = slides.length - 1;
@@ -15,14 +17,25 @@
     var next = 0;
     var last = Date.now();
 
+    // should already be loaded via HTML but just in case
     preload(current);
-    preload(next);
 
     setInterval(function() {
-        var now = Date.now();
-        if (now - last < 5000) {
+        if (!document.hasFocus()) {
+            // don't run when the tab is inactive
             return;
         }
+
+        var now = Date.now();
+        if (now - last > 7000 && preload(next)) {
+            // if there's ~5s left or less until the next switch and the next image is not loaded, wait another 4s
+            return;
+        }
+        if (now - last < 11000) {
+            // if the next slide is loaded but we've run less than 11s ago, wait another 4s
+            return;
+        }
+        // perform the switch and update the timestamp
         last = now;
 
         slides.item(previous).style["z-index"] = "0";
@@ -34,7 +47,5 @@
         previous = current;
         current = next;
         next = (next + 1) % slides.length;
-
-        preload(next);
-    }, 10000);
+    }, 4000);
 })();
