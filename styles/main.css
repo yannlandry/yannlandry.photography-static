@@ -185,13 +185,18 @@ article .narrow {
 article .medium {
     max-width: 660px;
 }
+article .image {
+    max-width: 900px;
+}
 article .wide {
-    max-width: 1260px;
+    max-width: 1200px;
     margin-top: 2em;
 }
 article .full {
     max-width: 100%;
     margin-top: 2.5em;
+}
+article .image, article .wide, article .full {
     padding-left: 0;
     padding-right: 0;
 }
@@ -201,6 +206,7 @@ article.preview {
 }
 article.preview h2 {
     margin-top: 0.3em;
+    font-size: 1.75em;
 }
 p.summary, p.caption, p.published {
     font-family: proxima-nova, sans-serif;
