@@ -169,24 +169,20 @@ em {
 /* Blog and pages */
 article > h1, article > h2, article > h3, article > h4, article > h5, article > h6, article > p, article > blockquote,
 article > ul, article > ol, article > pre, article > section, article > table, div.normal {
-    max-width: 960px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     padding-left: 30px;
     padding-right: 30px;
-    box-sizing: border-box;
 }
 article img {
     max-width: 100%;
 }
 article .narrow {
-    max-width: 360px;
+    max-width: 300px;
 }
 article .medium {
-    max-width: 660px;
-}
-article .image {
-    max-width: 900px;
+    max-width: 600px;
 }
 article .wide {
     max-width: 1200px;
@@ -195,6 +191,14 @@ article .wide {
 article .full {
     max-width: 100%;
     margin-top: 2.5em;
+}
+@media (max-width: 900px) {
+    article .wide {
+        margin-top: 1em;
+    }
+    article .full {
+        margin-top: 1em;
+    }
 }
 article .image, article .wide, article .full {
     padding-left: 0;
