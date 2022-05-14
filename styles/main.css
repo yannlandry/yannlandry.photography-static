@@ -328,3 +328,11 @@ a.permalink:hover {
 time {
     cursor: help;
 }
+sup {
+    vertical-align: super;
+    font-size: 0.6em;
+}
+sub {
+    vertical-align: sub;
+    font-size: 0.6em;
+}
